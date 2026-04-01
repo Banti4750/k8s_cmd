@@ -10,4 +10,8 @@ kubectl delete deployment nginx-deployment --grace-period=0 --force
 kubectl logs deployment/nginx-deployment
 kubectl describe deployment nginx-deployment
 kubectl rollout status deployment/nginx-deployment
-kubectl scale deployment/nginx-deployment --replicas=3
+kubectl scale deployment/nginx-deployment --replicas 3
+
+kubectl rollout history deployment/nginx-deployment
+kubectl rollout undo deployment/nginx-deployment --to-revision=1
+
