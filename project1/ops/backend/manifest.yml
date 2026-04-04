@@ -1,7 +1,15 @@
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: backend-team
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
+  namespace: backend-team
 spec:
   replicas: 2
   selector:
@@ -22,6 +30,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: backend
+  namespace: backend-team
 spec:
   selector:
     app: backend
