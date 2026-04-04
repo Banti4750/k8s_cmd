@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: banti47/express:latest
+          image: banti47/express:2
           ports:
             - containerPort: 3000
 ---
