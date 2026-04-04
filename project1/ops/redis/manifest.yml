@@ -1,42 +1,39 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: db-team
+  name: redis-team
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db
-  namespace: db-team
+  name: redis
+  namespace: redis-team
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: db
+      app: redis
   template:
     metadata:
       labels:
-        app: db
+        app: redis
     spec:
       containers:
-        - name: db
-          image: postgres:latest
-          env:
-            - name: POSTGRES_PASSWORD
-              value: postgres
+        - name: redis
+          image: redis:latest
           ports:
-            - containerPort: 5432
+            - containerPort: 6379
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: db
-  namespace: db-team
+  name: redis
+  namespace: redis-team
 spec:
   selector:
-    app: db
+    app: redis
   ports:
     - protocol: TCP
-      port: 5432
-      targetPort: 5432
+      port: 6379
+      targetPort: 6379
   type: ClusterIP
