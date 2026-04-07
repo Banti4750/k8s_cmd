@@ -11,7 +11,7 @@ data:
     http {
       server {
         listen 80;
-        server_name k8s-backend.100xdevs.com;
+        server_name k8s-backend.stravixglobaltech.com;
 
         location / {
           proxy_pass http://backend.backend-team.svc.cluster.local:3000;
@@ -24,7 +24,7 @@ data:
       }
       server {
         listen 80;
-        server_name k8s-frontend.100xdevs.com;
+        server_name k8s-frontend.stravixglobaltech.com;
 
         location / {
           proxy_pass http://frontend.frontend-team.svc.cluster.local:80;
