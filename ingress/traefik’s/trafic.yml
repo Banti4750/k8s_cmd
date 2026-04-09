@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: traefik-web-apps-ingress
+  namespace: default
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: stravixglobaltech.com
+      http:
+        paths:
+          - path: /nginx
+            pathType: Prefix
+            backend:
+              service:
+                name: backend
+                port:
+                  number: 80
+          - path: /httpd
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
