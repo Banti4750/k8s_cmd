@@ -3,10 +3,12 @@ kind: Ingress
 metadata:
   name: traefik-web-apps-ingress
   namespace: default
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: default-strip-prefix@kubernetescrd
 spec:
   ingressClassName: traefik
   rules:
-    - host: stravixglobaltech.com
+    - host: ket.stravixglobaltech.com
       http:
         paths:
           - path: /nginx
