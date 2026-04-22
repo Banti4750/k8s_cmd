@@ -1,0 +1,1 @@
+Whenever you’re storing values in a secret, you need to base64 encode them. They can still be decoded , and hence this is not for security purposes. This is more to provide a standard way to store secrets, incase they are binary in nature.
