@@ -1,0 +1,1 @@
+This repository explains Kubernetes commands (kubectl) and also includes some small projects to practice deployment, scaling, networking, and container management in Kubernetes.
